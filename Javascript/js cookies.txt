@@ -1,0 +1,13 @@
+ // Show message card only if user hasn't dismissed it before
+    window.onload = function() {
+      if (!localStorage.getItem('messageDismissed')) {
+        document.getElementById('messageCard').style.display = 'block';
+      }
+    };
+
+    // When user clicks "Got it!"
+    document.getElementById('closeBtn').onclick = function() {
+      document.getElementById('messageCard').style.display = 'none';
+      // Remember that user dismissed it
+      localStorage.setItem('messageDismissed', 'true');
+    };

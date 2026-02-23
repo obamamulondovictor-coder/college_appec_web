@@ -1,0 +1,81 @@
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    width: 100%;
+    /* position: fixed; */
+    
+
+}
+
+.navbar img {
+    height: 50px;
+    width: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    transition: 0.9s ease;
+
+
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+    font-size: 20px;
+
+}
+html,body{
+    background-color: #ffffffe8;
+}
+
+
+.about-2{
+color: #6c757d;
+    line-height: 1.74;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    font-size: 20px;
+}
+.mission-container h1{
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.mission{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.timeline{
+     height: 490px;
+    width: 6px;
+    border-radius: 10px;
+    background-color: rgba(73, 249, 73, 0.844);
+}
+.revolution{
+    gap: 15px;
+}
+.card1{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    
+}

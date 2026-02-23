@@ -1,0 +1,498 @@
+/* import font from files */
+@font-face {
+    font-family: 'ArchivoBlack-Regular';
+    src: url(../Fonts/Archivo_Black/ArchivoBlack-Regular.ttf) format(ttf);
+}
+
+@font-face {
+    font-family: 'ArchivoBlack-Regular';
+    src: url(../Fonts/Bebas_Neue/BebasNeue-Regular.ttf) format(ttf);
+}
+
+@font-face {
+    font-family: 'ArchivoBlack-Regular';
+    src: url(../Fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf) format(ttf);
+    src: url(../Fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format(ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+body,html{
+    scroll-behavior: smooth;
+}
+
+body {
+    animation: reveal 0.5s linear;
+    
+}
+
+.menu {
+    display: none;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    /* backdrop-filter: blur(10px); */
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+
+}
+
+.navbar img {
+    height: 50px;
+    width: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    transition: 0.9s ease;
+
+
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+    font-size: 20px;
+
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: changebgimage 10s linear infinite;
+}
+
+.hero .overlay {
+    position: absolute;
+    
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    pointer-events: none;
+    transition: 0.3s linear;
+
+
+}
+
+@keyframes changebgimage {
+
+    0%,
+    100% {
+        background-image: url('../Images/Web_images/College_appec.png');
+    }
+
+    50% {
+        background-image: url('../Images/Web_images/Appec\ Student.png');
+    }
+
+    70% {
+        background-image: url('../Images/Web_images/Appec\ Primary.png');
+    }
+}
+
+.hero .welcome {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(50%);
+    color: white;
+    text-align: left;
+
+}
+
+
+.hero .welcome h1 {
+    font-size: 70px;
+    letter-spacing: 10;
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    font-weight: bold;
+
+
+}
+
+.hero .welcome p {
+    font-size: 30px;
+}
+
+.card_message {
+    position: fixed;
+    /* LOCK to screen */
+    bottom: 20px;
+    /* always bottom */
+    right: 20px;
+    /* always right */
+
+    width: 500px;
+    max-width: 90vw;
+    /* safe on small screens */
+    height: auto;
+
+    background-color: black;
+    color: white;
+    padding: 30px 5%;
+    font-size: 20px;
+
+    border-radius: 10px;
+    z-index: 9999;
+
+}
+
+
+.card_message p a {
+    text-decoration: none;
+    color: rgb(141, 135, 135);
+    transition: 0.5s ease;
+}
+
+.card_message p a:hover {
+    color: rgb(30, 30, 145);
+    text-decoration: underline;
+}
+
+.card_message .button {
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+button {
+    height: 65px;
+    transition: 0.3s linear;
+
+}
+
+button:nth-child(1) {
+    background-color: rgb(245, 245, 24);
+    outline: none;
+    border: none;
+    width: 167px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+button:nth-child(2) {
+    background-color: rgb(139, 133, 133);
+    outline: none;
+    border: none;
+    width: 167px;
+    color: white;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+button:nth-child(1):hover {
+    border: 3px solid rgb(243, 243, 243);
+    font-size: large;
+
+}
+
+button:nth-child(2):hover {
+    border: 3px solid rgb(243, 243, 243);
+    font-size: large;
+
+}
+
+
+.about_us h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+
+.about_us {
+    background-color: rgb(240, 240, 240);
+    height: auto;
+}
+
+
+.about {
+
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding: 50px 5%;
+    display: grid;
+    gap: 10px;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+.about P {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+}
+
+.about img {
+    width: 300px;
+    max-width: 100%;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.service {
+    width: 100%;
+    padding: 50px 5%;
+    text-align: center;
+
+}
+
+.service .cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.head h1 {
+    margin-bottom: 30px 5%;
+}
+
+.service div abbr {
+    text-decoration: none;
+
+
+}
+
+
+.cards div {
+    margin-top: 30px;
+    height: 400px;
+    width: 350px;
+    box-shadow: 9px 9px 9px rgba(0, 0, 0.5, 0.5);
+
+    border-radius: 10px;
+    transition: 0.3s linear;
+
+
+}
+
+.cards div:hover {
+    -webkit-box-shadow: 0px 11px 16px 4px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 11px 16px 4px rgba(0, 0, 0, 0.74);
+}
+
+/* edit all class trade avail */
+.software {
+    text-align: center;
+    overflow: hidden;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.school_number {
+    background-color: rgb(18, 28, 78);
+    color: white;
+    padding: 20px 5%;
+
+}
+
+.school_number .numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+
+}
+
+.school_number span {
+    text-align: center;
+}
+
+.tittle {
+    font-family: 'Poppins-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.subtittle {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.school_number .numbers span {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 9px;
+    font-size: 48px;
+    margin-bottom: 0px;
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.school_number span p {
+    font-size: 16px;
+    color: #e0e7ff;
+    line-height: 1.75;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.partners {
+    padding: 30px 5%;
+}
+
+.partners h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: center;
+
+
+}
+
+.partners p {
+    color: #3b3b3b;
+    line-height: 1.74;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.partners_image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px 5%;
+    gap: 30px;
+}
+
+.partners .partners_image img {
+    max-width: 100%;
+
+    height: 73px;
+    transition: all 0.3s ease;
+}
+
+
+
+.partners .partners_image img:hover {
+    scale: 1.25;
+    filter: brightness(1.05);
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px,1fr));
+    gap: 10px;
+    color: white;
+    padding: 30px 6%;
+    background-color:  rgb(18, 28, 78);
+}
+
+.social_media h3, .quick_links h3, .map h3{
+    font-weight: 700;
+    font-size: 25px;
+    
+    font-family: 'Poppins-Bold', sans-serif;
+}
+.social_media p img{
+    height: 30px;
+    width: 30px;
+    color: white;
+}
+
+.quick_links , .social_media , .map {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quick_links a{
+    text-decoration: none;
+    color: white;
+    font: 1em sans-serif;
+    font-weight: 700;
+    transition: 0.3s ease;
+
+}
+.quick_links a:hover{
+    color: rgb(0, 94, 255);
+}
+.map_container iframe{
+    height: 250px;
+    width: 390px;
+    border-radius: 10px;
+}
+.line{
+    background-color: rgb(0, 179, 255);
+   width: 100px;
+    height: 5px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: 0.5s linear;
+}
+#scroll{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+     display: none;
+}
+#button_scroll{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 50%;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    background-color: rgb(0, 89, 255);
+    transition: 0.5s linear;
+}
+#button_scroll:hover{
+    border: 2px solid rgb(0, 153, 255);
+}
+
+

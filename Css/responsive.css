@@ -1,0 +1,18 @@
+@media(max-width:600px){
+body{
+    display: none;
+}
+}
+@media (max-width:771px) {
+
+    .partners_image,
+    .service .cards,.footer ,.about_us , .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+  
+
+}
