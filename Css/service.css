@@ -1,0 +1,283 @@
+
+/* ── Navbar on service page — always visible at top ── */
+.navbar {
+    background: linear-gradient(135deg, rgba(10, 20, 80, 0.97) 0%, rgba(18, 28, 78, 0.97) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Push page content below the fixed navbar */
+body {
+    padding-top: 90px;
+}
+
+
+.active_nav {
+    text-decoration: underline !important;
+    font-weight: 700;
+}
+
+.service_hero {
+    position: relative;
+    height: 55vh;
+    min-height: 320px;
+    background-image: url('../Images/Web_images/Master Image.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.service_hero_overlay {
+    position: absolute;
+    top: 0;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 20, 80, 0.75) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.service_hero_content {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.service_hero_content h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+    margin-bottom: 14px;
+}
+
+.service_hero_content p {
+    font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+    color: #c7d8ff;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.service_intro {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #f5f7ff;
+}
+
+.service_intro h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: #0a1450;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.service_intro p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #3b3b3b;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+
+.service_page_cards {
+    padding: 50px 5%;
+    background-color: #ffffff;
+}
+
+.service_page_cards .cards {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+}
+
+
+.trade_detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+.trade_detail_reverse {
+    direction: rtl;
+}
+
+.trade_detail_reverse > * {
+    direction: ltr;
+}
+
+.trade_detail .trade_image {
+    overflow: hidden;
+    position: relative;
+}
+
+.trade_detail .trade_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.trade_detail:hover .trade_image img {
+    transform: scale(1.05);
+}
+
+.trade_detail .trade_info {
+    padding: 50px 6%;
+    background-color: #f5f7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Alternating background */
+.trade_detail:nth-child(even) .trade_info {
+    background-color: #eef1ff;
+}
+
+/* Trade badge */
+.trade_badge {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.swd_badge  { background: #dbeafe; color: #1d4ed8; }
+.bdc_badge  { background: #fef3c7; color: #b45309; }
+.csa_badge  { background: #d1fae5; color: #065f46; }
+.acc_badge  { background: #ede9fe; color: #6d28d9; }
+
+.trade_info h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 900;
+    color: #0a1450;
+    line-height: 1.2;
+}
+
+.trade_info > p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #444;
+}
+
+.trade_info h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #0a1450;
+    margin-top: 6px;
+    border-left: 4px solid #3b5bdb;
+    padding-left: 10px;
+}
+
+.trade_info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.trade_info ul li {
+    font-size: 0.95rem;
+    color: #333;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.trade_info ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #3b5bdb;
+    font-size: 0.85rem;
+}
+
+/* Apply button */
+.trade_apply_btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #3b5bdb 0%, #6366f1 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+}
+
+.trade_apply_btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(99, 102, 241, 0.6);
+    filter: brightness(1.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .trade_detail,
+    .trade_detail_reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .trade_detail .trade_image {
+        height: 280px;
+    }
+
+    .trade_detail .trade_info {
+        padding: 36px 6%;
+    }
+}
+
+@media (max-width: 600px) {
+    .service_hero {
+        height: 45vh;
+    }
+
+    .service_intro {
+        padding: 40px 6%;
+    }
+
+    .service_page_cards {
+        padding: 30px 4%;
+    }
+
+    .service_page_cards .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .trade_detail .trade_image {
+        height: 220px;
+    }
+
+    .trade_info h2 {
+        font-size: 1.4rem;
+    }
+}

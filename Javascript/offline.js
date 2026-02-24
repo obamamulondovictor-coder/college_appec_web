@@ -1,12 +1,29 @@
-const warning = document.getElementById('offlineWarning');
 
+var warning = document.getElementById('offlineWarning');
+var warnIcon = document.getElementById('warnIcon');
+var warnTitle = document.getElementById('warnTitle');
+var warnMsg = document.getElementById('warnMsg');
 
-window.addEventListener('offline', function () {
-    warning.style.display = 'block'
-    warning.innerHTML='⚠ No internet connection. Some features may not work.'
+if (warning && warnIcon && warnTitle && warnMsg) {
     
-})
-window.addEventListener('online', function () {
-    warning.style.display = 'none' //add none after sometime and settimeout
-    warning.innerHTML=' 🌐 Interner Connection On.'
-})
+    // Show offline warning
+    window.addEventListener('offline', function() {
+        warnIcon.textContent = '📡';
+        warnTitle.textContent = 'No Connection';
+        warnMsg.textContent = 'You are offline. Some features may not work.';
+        warning.style.display = 'flex';
+    });
+
+    // Show online warning (when back online)
+    window.addEventListener('online', function() {
+        warnIcon.textContent = '🌐';
+        warnTitle.textContent = 'Back Online';
+        warnMsg.textContent = 'Internet connection restored!';
+        warning.style.display = 'flex';
+        
+        // Hide after 4 seconds
+        setTimeout(function() {
+            warning.style.display = 'none';
+        }, 4000);
+    });
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Admin Login — Appec TSS</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/service.css">
+    <link rel="stylesheet" href="../Css/login.css">
+    <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
+    <style>
+        /* Override body padding from service.css for full-page login */
+        body { padding-top: 0 !important; }
+        .navbar { display: none !important; }
+    </style>
+</head>
+
+<body id="body">
+
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline.</div>
+        </div>
+        <span class="status_dot"></span>
+    </div>
+
+    <div class="login_page">
+
+        <!-- ── Left Branding Panel ── -->
+        <div class="login_left">
+            <div class="login_left_overlay"></div>
+            <div class="login_left_content">
+                <img src="../Images/Logo/logo.png" alt="Appec TSS Logo" class="login_logo">
+                <div class="login_badge">🏫 College Appec TSS</div>
+                <h1>Master<br>Administration</h1>
+                <p>Secure access for administrators, principals, and management staff to oversee school operations, reports, and system settings.</p>
+                <ul class="login_features">
+                    <li><span class="feat_icon">📊</span> View all analytics</li>
+                    <li><span class="feat_icon">👥</span> Manage staff & students</li>
+                    <li><span class="feat_icon">📑</span> Generate reports</li>
+                    <li><span class="feat_icon">⚙️</span> System configuration</li>
+                    <li><span class="feat_icon">🔐</span> Access control settings</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ── Right Form Panel ── -->
+        <div class="login_right">
+
+            <!-- LOGIN FORM -->
+            <div class="login_form_wrap" id="loginFormWrap">
+                <div class="login_form_header">
+                    <span class="login_role_tag tag_master">🔐 Master Access</span>
+                    <h2>Sign In to Admin Panel</h2>
+                    <p>Enter your administrator credentials to access the master control panel.</p>
+                </div>
+
+                <div class="lf_msg error" id="loginError">
+                    <span>⚠️</span>
+                    <span id="loginErrorText">Invalid credentials. Please try again.</span>
+                </div>
+
+                <form class="login_form" id="masterLoginForm" onsubmit="handleMasterLogin(event)">
+
+                    <div class="lf_group">
+                        <label for="m_email">Admin ID / Email *</label>
+                        <div class="lf_input_wrap">
+                            <span class="lf_input_icon">👤</span>
+                            <input type="text" id="m_email" placeholder="admin.id@appec.rw" required autocomplete="username">
+                        </div>
+                    </div>
+
+                    <div class="lf_group">
+                        <label for="m_password">Password *</label>
+                        <div class="lf_input_wrap">
+                            <span class="lf_input_icon">🔒</span>
+                            <input type="password" id="m_password" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="lf_toggle_pw" onclick="togglePw('m_password', this)" title="Show/hide password">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="lf_row">
+                        <label class="lf_remember">
+                            <input type="checkbox" id="m_remember">
+                            Remember me
+                        </label>
+                        <a href="#" class="lf_forgot">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login_btn btn_master" id="masterLoginBtn">
+                        <span class="btn_text">Sign In</span>
+                        <span class="btn_icon">→</span>
+                    </button>
+                </form>
+
+                <div class="lf_divider">or</div>
+
+                <div class="lf_back">
+                    <a href="../Pages/student_portal.html">← Back to Student Portal</a>
+                </div>
+            </div>
+
+            <!-- DASHBOARD (shown after login) -->
+            <div class="login_dashboard" id="masterDashboard">
+                <div class="dash_welcome">
+                    <div class="dash_icon">🔐</div>
+                    <h3 id="dashMasterName">Welcome, Administrator!</h3>
+                    <p>Master Control Panel · Academic Year 2025/26</p>
+                </div>
+
+                <div class="dash_cards">
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">👥</span>
+                        <span class="dc_label">Students</span>
+                        <span class="dc_count">248</span>
+                    </a>
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">👨‍🏫</span>
+                        <span class="dc_label">Teachers</span>
+                        <span class="dc_count">18</span>
+                    </a>
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">📊</span>
+                        <span class="dc_label">Reports</span>
+                        <span class="dc_count">7</span>
+                    </a>
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">⚙️</span>
+                        <span class="dc_label">Settings</span>
+                        <span class="dc_count">5</span>
+                    </a>
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">📝</span>
+                        <span class="dc_label">Applications</span>
+                        <span class="dc_count">42</span>
+                    </a>
+                    <a href="#" class="dash_card">
+                        <span class="dc_icon">🔔</span>
+                        <span class="dc_label">Notices</span>
+                        <span class="dc_count">3</span>
+                    </a>
+                </div>
+
+                <button class="dash_logout" onclick="handleLogout('master')">
+                    🚪 Sign Out
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../Javascript/offline.js"></script>
+    <script>
+        // === PASSWORD TOGGLE ===
+        function togglePw(inputId, btn) {
+            var input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                btn.textContent = '👁';
+            }
+        }
+
+        // === MASTER LOGIN ===
+        function handleMasterLogin(e) {
+            e.preventDefault();
+            var btn = document.getElementById('masterLoginBtn');
+            var email = document.getElementById('m_email').value.trim();
+            var password = document.getElementById('m_password').value;
+
+            btn.disabled = true;
+            btn.querySelector('.btn_text').textContent = 'Verifying…';
+
+            setTimeout(function() {
+                // Accept password "123"
+                if (email && password === '123') {
+                    var name = email.split('@')[0];
+                    name = name.replace(/[._]/g, ' ');
+                    name = name.replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+                    document.getElementById('dashMasterName').textContent = 'Welcome, ' + name + '!';
+                    document.getElementById('loginFormWrap').style.display = 'none';
+                    document.getElementById('masterDashboard').classList.add('show');
+                } else {
+                    document.getElementById('loginError').classList.add('show');
+                    btn.disabled = false;
+                    btn.querySelector('.btn_text').textContent = 'Sign In';
+                }
+            }, 1200);
+        }
+
+        // === LOGOUT ===
+        function handleLogout(role) {
+            document.getElementById('masterDashboard').classList.remove('show');
+            document.getElementById('loginFormWrap').style.display = '';
+            document.getElementById('masterLoginForm').reset();
+            document.getElementById('masterLoginBtn').disabled = false;
+            document.getElementById('masterLoginBtn').querySelector('.btn_text').textContent = 'Sign In';
+        }
+    </script>
+</body>
+
+</html>

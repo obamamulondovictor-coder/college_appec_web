@@ -4,67 +4,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appec Website</title>
-    <!-- css link main -->
-    <!-- <link rel="stylesheet" href="..//Css/style.css"> -->
-    <link rel="stylesheet" href="../Css/about.css">
-    <!-- responsive css -->
-    <link rel="stylesheet" href="..//Css/responsive.css">
-    <!-- website icon -->
+    <title>About Us — Appec TSS</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
+    <link rel="stylesheet" href="../Css/service.css">
+    <link rel="stylesheet" href="../Css/about_page.css">
     <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
 </head>
 
-<body>
-    <header>
-        <div class="overlay"></div>
-        <nav class="navbar">
-            <img src="../Images/Logo/logo.png" alt="Website Appec Logo">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../Pages/About.html">About Us</a></li>
-                <li><a href="../Pages/Service.html">Service</a></li>
-                <li><a href="../Pages/Contact.html">Contact</a></li>
-                <li><a href="../Pages/student_portal.html">Student Portal</a></li>
-            </ul>
-        </nav>
-    </header>
+<body id="body">
 
-    <div class="about-2">
-
-        <p>College Appec Remera-Rukoma TSS is a Government Aided School located in Remera-Rukoma, Kamonyi District,
-            Rwanda. The
-            institution is known for its commitment to providing quality education and fostering a supportive
-            learning
-            environment for its students. With a focus on academic excellence and holistic development, College
-            Appec
-            offers a range of programs
-        <p>
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline.</div>
+        </div>
+        <span class="status_dot"></span>
     </div>
-    <div class="mission-container">
-    
-        <h1>Mission</h1>
-         <div class="mission">
-        <div class="timeline"></div>
-        <div class="revolution">
-            <div class="card1"></div>
-            <div class="card1"></div>
-            <div class="card1"></div>
-            <div class="card1"></div>
+
+    <nav class="navbar" id="navbar">
+        <img src="../Images/Logo/logo.png" alt="Website Appec Logo">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Pages/About.html" class="active_nav">About Us</a></li>
+            <li><a href="../Pages/Service.html">Service</a></li>
+            <li><a href="../Pages/Contact.html">Contact</a></li>
+            <li><a href="../Pages/student_portal.html">Student Portal</a></li>
+        </ul>
+        <div class="menu">≡</div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="about_hero">
+        <div class="about_hero_overlay"></div>
+        <div class="about_hero_content animate_up">
+            <span class="about_tag">Est. 2019</span>
+            <h1>About College Appec</h1>
+            <p>A Government-Aided Technical & Vocational School shaping Rwanda's future workforce</p>
+        </div>
+    </section>
+
+    <!-- ── INTRO ── -->
+    <section class="about_intro">
+        <div class="about_intro_img animate_left">
+            <img src="../Images/Web_images/Appec Door Gate.png" alt="College Appec Gate">
+        </div>
+        <div class="about_intro_text animate_right">
+            <span class="section_tag">Who We Are</span>
+            <h2>College Appec TSS<br>Remera-Rukoma</h2>
+            <p>
+                College Appec Remera-Rukoma TSS is a <strong>Government-Aided Technical Secondary School</strong>
+                located in Remera-Rukoma, Kamonyi District, Southern Province, Rwanda. Founded with a vision to
+                bridge the skills gap in Rwanda's growing economy, the college provides hands-on, industry-aligned
+                technical and vocational education.
+            </p>
+            <p>
+                Accredited by <strong>NESA</strong> (National Examination and School Inspection Authority) and
+                aligned with Rwanda's <strong>Vision 2050</strong> and the national skills development agenda,
+                College Appec equips students with practical competencies that make them immediately employable
+                or ready to start their own enterprises.
+            </p>
+            <div class="about_stats">
+                <div class="stat_item">
+                    <span class="stat_num">5+</span>
+                    <span class="stat_label">Years Active</span>
+                </div>
+                <div class="stat_item">
+                    <span class="stat_num">4</span>
+                    <span class="stat_label">Trade Programmes</span>
+                </div>
+                <div class="stat_item">
+                    <span class="stat_num">180+</span>
+                    <span class="stat_label">Graduates</span>
+                </div>
+                <div class="stat_item">
+                    <span class="stat_num">8+</span>
+                    <span class="stat_label">Partners</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MISSION / VISION / VALUES ── -->
+    <section class="mvv_section">
+        <div class="mvv_card animate_up" style="--delay:0s">
+            <div class="mvv_icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+                To provide quality, accessible, and relevant technical and vocational education that empowers
+                students with practical skills, ethical values, and entrepreneurial mindsets to contribute
+                meaningfully to Rwanda's socio-economic development.
+            </p>
+        </div>
+        <div class="mvv_card animate_up" style="--delay:0.15s">
+            <div class="mvv_icon">🔭</div>
+            <h3>Our Vision</h3>
+            <p>
+                To be a leading centre of excellence in technical and vocational education in Rwanda, producing
+                competent, innovative, and globally competitive graduates who drive sustainable development.
+            </p>
+        </div>
+        <div class="mvv_card animate_up" style="--delay:0.3s">
+            <div class="mvv_icon">💎</div>
+            <h3>Core Values</h3>
+            <ul>
+                <li>Excellence &amp; Quality</li>
+                <li>Integrity &amp; Accountability</li>
+                <li>Innovation &amp; Creativity</li>
+                <li>Inclusivity &amp; Respect</li>
+                <li>Community &amp; Service</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── HISTORY TIMELINE ── -->
+    <section class="timeline_section">
+        <div class="timeline_header">
+            <span class="section_tag">Our Journey</span>
+            <h2>College Milestones</h2>
+        </div>
+        <div class="timeline">
+            <div class="tl_item tl_left animate_left">
+                <div class="tl_content">
+                    <span class="tl_year">2019</span>
+                    <h4>Foundation</h4>
+                    <p>College Appec TSS Remera-Rukoma was officially established as a Government-Aided school under the Ministry of Education.</p>
+                </div>
+            </div>
+            <div class="tl_item tl_right animate_right">
+                <div class="tl_content">
+                    <span class="tl_year">2020</span>
+                    <h4>First Intake</h4>
+                    <p>The college welcomed its first cohort of students across the SWD, BDC, CSA, and Accounting programmes.</p>
+                </div>
+            </div>
+            <div class="tl_item tl_left animate_left">
+                <div class="tl_content">
+                    <span class="tl_year">2022</span>
+                    <h4>NESA Accreditation</h4>
+                    <p>All four trade programmes received full accreditation from NESA, validating the quality of education delivered.</p>
+                </div>
+            </div>
+            <div class="tl_item tl_right animate_right">
+                <div class="tl_content">
+                    <span class="tl_year">2023</span>
+                    <h4>First Graduates</h4>
+                    <p>College Appec celebrated its first graduating class — over 60 students entered the workforce or pursued higher education.</p>
+                </div>
+            </div>
+            <div class="tl_item tl_left animate_left">
+                <div class="tl_content">
+                    <span class="tl_year">2024</span>
+                    <h4>Infrastructure Growth</h4>
+                    <p>New computer labs, construction workshops, and accounting classrooms were commissioned, doubling the college's capacity.</p>
+                </div>
+            </div>
+            <div class="tl_item tl_right animate_right">
+                <div class="tl_content">
+                    <span class="tl_year">2025+</span>
+                    <h4>Digital Transformation</h4>
+                    <p>Launch of the college's digital platform, online student portal, and partnerships with tech companies for internship placements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery_section">
+        <div class="gallery_header">
+            <span class="section_tag">Campus Life</span>
+            <h2>Life at College Appec</h2>
+        </div>
+        <div class="gallery_grid">
+            <div class="gallery_item tall animate_up"><img src="../Images/Web_images/College_appec.png" alt="College Campus"></div>
+            <div class="gallery_item animate_up"><img src="../Images/Web_images/Appec Student.png" alt="Students"></div>
+            <div class="gallery_item animate_up"><img src="../Images/Web_images/Appec Primary.png" alt="Primary Section"></div>
+            <div class="gallery_item wide animate_up"><img src="../Images/Web_images/Appec Door Gate.png" alt="College Gate"></div>
+        </div>
+    </section>
+
+    <!-- ── PARTNERS ── -->
+    <section class="partners_section">
+        <div class="partners_header">
+            <span class="section_tag">Stakeholders</span>
+            <h2>Our Partners &amp; Stakeholders</h2>
+            <p>We collaborate with government bodies, industry leaders, and international organisations to deliver world-class education.</p>
+        </div>
+        <div class="partners_logos">
+            <img src="../Images/Logo/Coat_of_arms_of_Rwanda.png" alt="Rwanda Coat of Arms">
+            <img src="../Images/Logo/RTB_logo.jpeg" alt="RTB">
+            <img src="../Images/Logo/nesalogo.png" alt="NESA">
+            <img src="../Images/Logo/minict_1.png" alt="MINICT">
+            <img src="../Images/Logo/mineduc_1.png" alt="MINEDUC">
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="about_cta">
+        <div class="about_cta_content">
+            <h2>Ready to Join College Appec?</h2>
+            <p>Apply today and take the first step towards a skilled, successful future.</p>
+            <div class="cta_buttons">
+                <a href="../Pages/student_portal.html" class="cta_btn_primary">Apply Now</a>
+                <a href="../Pages/Contact.html" class="cta_btn_secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="footer">
+        <div class="social_media">
+            <h3>Social Media</h3>
+            <div class="line"></div>
+            <p><img src="../Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p>
+            <p><img src="../Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p>
+            <p><img src="../Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p>
+            <p><img src="../Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p>
+            <p><img src="../Images/icons/youtube-brands-solid-full.svg" alt="YouTube">YouTube</p>
+            <p><img src="../Images/icons/tiktok-brands-solid-full.svg" alt="Tiktok">Tiktok</p>
+            <p><img src="../Images/icons/envelope-solid-full.svg" alt="Email">Email</p>
+            <p><img src="../Images/icons/phone-solid-full.svg" alt="Tel">Telephone</p>
+        </div>
+        <div class="quick_links">
+            <h3>Quick Links</h3>
+            <div class="line"></div>
+            <a href="../index.html">Home</a>
+            <a href="../Pages/About.html">About Us</a>
+            <a href="../Pages/Service.html">Service</a>
+            <a href="../Pages/Contact.html">Contact Us</a>
+            <a href="../Pages/student_portal.html">Student Portal</a>
+        </div>
+        <div class="map">
+            <h3>Location</h3>
+            <div class="line"></div>
+            <div class="map_container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
-    </div>
-   
 
+    <a href="#" id="scroll"><button id="button_scroll">↑</button></a>
 
-
-
-
-
-    <!-- menu bar javascript -->
     <script src="../Javascript/menu_bar.js"></script>
-    <!-- main js -->
     <script src="../Javascript/index.js"></script>
-
+    <script src="../Javascript/offline.js"></script>
+    <script src="../Javascript/hide_box.js"></script>
+    <script>
+        
+        const animEls = document.querySelectorAll('.animate_up, .animate_left, .animate_right');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in_view');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        animEls.forEach(el => obs.observe(el));
+    </script>
 </body>
 
 </html>

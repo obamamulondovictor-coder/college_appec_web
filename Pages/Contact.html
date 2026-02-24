@@ -1,39 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appec Website</title>
-    <!-- css link main -->
-     <link rel="stylesheet" href="..//Css/style.css">
-     <!-- responsive css -->
-      <link rel="stylesheet" href="..//Css/responsive.css">
-      <!-- website icon -->
-       <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
+    <title>Contact — Appec TSS</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
+    <link rel="stylesheet" href="../Css/service.css">
+    <link rel="stylesheet" href="../Css/contact.css">
+    <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
 </head>
-<body>
-   <header>
-     <nav class="navbar">
+
+<body id="body">
+
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline.</div>
+        </div>
+        <span class="status_dot"></span>
+    </div>
+
+    <nav class="navbar" id="navbar">
         <img src="../Images/Logo/logo.png" alt="Website Appec Logo">
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/About.html">About Us</a></li>
             <li><a href="../Pages/Service.html">Service</a></li>
-            <li><a href="../Pages/Contact.html">Contact</a></li>
+            <li><a href="../Pages/Contact.html" class="active_nav">Contact</a></li>
             <li><a href="../Pages/student_portal.html">Student Portal</a></li>
         </ul>
+        <div class="menu">≡</div>
     </nav>
-   </header>
 
-    
+    <!-- ── HERO ── -->
+    <section class="contact_hero">
+        <div class="contact_hero_overlay"></div>
+        <div class="contact_hero_content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you — reach out to our team anytime</p>
+        </div>
+    </section>
 
+    <!-- ── CONTACT CARDS ── -->
+    <section class="contact_cards_section">
+        <div class="contact_card">
+            <div class="cc_icon">📍</div>
+            <h3>Location</h3>
+            <p>Remera-Rukoma, Kamonyi District<br>Southern Province, Rwanda</p>
+        </div>
+        <div class="contact_card">
+            <div class="cc_icon">📞</div>
+            <h3>Phone</h3>
+            <p>+250 788 000 001<br>+250 788 000 002</p>
+        </div>
+        <div class="contact_card">
+            <div class="cc_icon">✉️</div>
+            <h3>Email</h3>
+            <p>info@appectss.rw<br>admin@appectss.rw</p>
+        </div>
+        <div class="contact_card">
+            <div class="cc_icon">🕐</div>
+            <h3>Office Hours</h3>
+            <p>Mon – Fri: 7:30 AM – 5:00 PM<br>Sat: 8:00 AM – 12:00 PM</p>
+        </div>
+    </section>
 
+    <!-- ── MAIN CONTENT: FORM + STAFF ── -->
+    <section class="contact_main">
 
+        <!-- Contact Form -->
+        <div class="contact_form_wrap">
+            <span class="contact_tag">Send a Message</span>
+            <h2>Get In Touch</h2>
+            <p>Fill in the form below and our team will respond within 24 hours.</p>
 
-    <!-- menu bar javascript -->
-     <script src="./Javascript/menu_bar.js"></script>
-     <!-- main js -->
-      <script src="./Javascript/index.js"></script>
-    
+            <form class="contact_form" id="contactForm" onsubmit="submitContactForm(event)">
+                <div class="form_row">
+                    <div class="form_group">
+                        <label for="cf_name">Full Name *</label>
+                        <input type="text" id="cf_name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form_group">
+                        <label for="cf_email">Email Address *</label>
+                        <input type="email" id="cf_email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_group">
+                        <label for="cf_phone">Phone Number</label>
+                        <input type="tel" id="cf_phone" placeholder="+250 7XX XXX XXX">
+                    </div>
+                    <div class="form_group">
+                        <label for="cf_subject">Subject *</label>
+                        <select id="cf_subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option>Admission Enquiry</option>
+                            <option>Academic Information</option>
+                            <option>Fee Structure</option>
+                            <option>Partnership / Collaboration</option>
+                            <option>General Enquiry</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_group full">
+                    <label for="cf_message">Message *</label>
+                    <textarea id="cf_message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="contact_submit_btn">
+                    <span class="btn_text">Send Message</span>
+                    <span class="btn_icon">→</span>
+                </button>
+            </form>
+
+            <!-- Success card -->
+            <div class="contact_success" id="contactSuccess">
+                <div class="success_icon">✅</div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. Our team will get back to you within <strong>24 hours</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Staff Directory -->
+        <div class="staff_directory">
+            <span class="contact_tag">Our Team</span>
+            <h2>Staff Directory</h2>
+            <p>Contact our staff directly for specific enquiries.</p>
+
+            <div class="staff_list">
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#3b5bdb,#6366f1)">
+                        <span>HM</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">Head Master</span>
+                        <h4>Mr. Jean-Pierre Nkurunziza</h4>
+                        <p>📞 +250 788 100 001</p>
+                        <p>✉️ headmaster@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#0891b2,#06b6d4)">
+                        <span>DS</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">Deputy Head Master (Studies)</span>
+                        <h4>Mrs. Claudine Uwimana</h4>
+                        <p>📞 +250 788 100 002</p>
+                        <p>✉️ deputy.studies@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#059669,#10b981)">
+                        <span>SEC</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">School Secretary</span>
+                        <h4>Ms. Aline Mukamana</h4>
+                        <p>📞 +250 788 100 003</p>
+                        <p>✉️ secretary@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#7c3aed,#a78bfa)">
+                        <span>SWD</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">SWD Teacher</span>
+                        <h4>Mr. Eric Habimana</h4>
+                        <p>📞 +250 788 100 010</p>
+                        <p>✉️ swd@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#b45309,#f59e0b)">
+                        <span>BDC</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">BDC Teacher</span>
+                        <h4>Mr. Théogène Nzeyimana</h4>
+                        <p>📞 +250 788 100 011</p>
+                        <p>✉️ bdc@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#065f46,#10b981)">
+                        <span>CSA</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">CSA Teacher</span>
+                        <h4>Mr. Patrick Niyonzima</h4>
+                        <p>📞 +250 788 100 012</p>
+                        <p>✉️ csa@appectss.rw</p>
+                    </div>
+                </div>
+
+                <div class="staff_card">
+                    <div class="staff_avatar" style="background: linear-gradient(135deg,#6d28d9,#8b5cf6)">
+                        <span>ACC</span>
+                    </div>
+                    <div class="staff_info">
+                        <span class="staff_role">Accounting Teacher</span>
+                        <h4>Mrs. Solange Ingabire</h4>
+                        <p>📞 +250 788 100 013</p>
+                        <p>✉️ accounting@appectss.rw</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MAP ── -->
+    <section class="contact_map_section">
+        <div class="contact_map_info">
+            <span class="contact_tag">Find Us</span>
+            <h2>Our Location</h2>
+            <p>College Appec TSS is located in Remera-Rukoma, Kamonyi District, Southern Province, Rwanda. Easily accessible by public transport from Kigali.</p>
+            <ul class="location_details">
+                <li>📍 Remera-Rukoma, Kamonyi District</li>
+                <li>🏛️ Southern Province, Rwanda</li>
+                <li>🚌 ~45 min from Kigali City Centre</li>
+                <li>📮 P.O. Box 001, Remera-Rukoma</li>
+            </ul>
+        </div>
+        <div class="contact_map_embed">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="footer">
+        <div class="social_media">
+            <h3>Social Media</h3>
+            <div class="line"></div>
+            <p><img src="../Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p>
+            <p><img src="../Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p>
+            <p><img src="../Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p>
+            <p><img src="../Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p>
+            <p><img src="../Images/icons/youtube-brands-solid-full.svg" alt="YouTube">YouTube</p>
+            <p><img src="../Images/icons/tiktok-brands-solid-full.svg" alt="Tiktok">Tiktok</p>
+            <p><img src="../Images/icons/envelope-solid-full.svg" alt="Email">Email</p>
+            <p><img src="../Images/icons/phone-solid-full.svg" alt="Tel">Telephone</p>
+        </div>
+        <div class="quick_links">
+            <h3>Quick Links</h3>
+            <div class="line"></div>
+            <a href="../index.html">Home</a>
+            <a href="../Pages/About.html">About Us</a>
+            <a href="../Pages/Service.html">Service</a>
+            <a href="../Pages/Contact.html">Contact Us</a>
+            <a href="../Pages/student_portal.html">Student Portal</a>
+        </div>
+        <div class="map">
+            <h3>Location</h3>
+            <div class="line"></div>
+            <div class="map_container">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll"><button id="button_scroll">↑</button></a>
+
+    <script src="../Javascript/menu_bar.js"></script>
+    <script src="../Javascript/index.js"></script>
+    <script src="../Javascript/offline.js"></script>
+    <script src="../Javascript/hide_box.js"></script>
+    <script>
+        function submitContactForm(e) {
+            e.preventDefault();
+            const form    = document.getElementById('contactForm');
+            const success = document.getElementById('contactSuccess');
+            const btn     = form.querySelector('.contact_submit_btn');
+
+            btn.disabled = true;
+            btn.querySelector('.btn_text').textContent = 'Sending…';
+
+            setTimeout(() => {
+                form.style.display = 'none';
+                success.classList.add('show');
+            }, 1200);
+        }
+    </script>
 </body>
+
 </html>

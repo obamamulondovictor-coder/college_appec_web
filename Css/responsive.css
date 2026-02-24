@@ -1,18 +1,66 @@
-@media(max-width:600px){
-body{
-    display: none;
-}
-}
-@media (max-width:771px) {
+
+@media (max-width: 771px) {
 
     .partners_image,
-    .service .cards,.footer ,.about_us , .about {
+    .footer,
+    .about_us,
+    .about {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         text-align: center;
     }
-  
 
+
+    .service .cards {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .cards .card {
+        width: 90vw;
+        max-width: 400px;
+        height: 320px;
+    }
+
+  
+    .cards .card .card_overlay {
+        transform: translateY(0);
+        background: linear-gradient(
+            to top,
+            rgba(10, 20, 80, 0.95) 0%,
+            rgba(10, 20, 80, 0.6) 50%,
+            transparent 100%
+        );
+    }
+
+    .cards .card .card_overlay p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .more_info_btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .more_info_btn:hover {
+        transform: scale(1.04);
+    }
+}
+
+@media (max-width: 480px) {
+    .cards .card {
+        height: 280px;
+    }
+
+    .cards .card .card_overlay h2 {
+        font-size: 1.5rem;
+    }
+
+    .more_info_btn {
+        font-size: 0.75rem;
+        padding: 8px 18px;
+    }
 }

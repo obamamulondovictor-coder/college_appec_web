@@ -4,38 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appec Website</title>
+    <title>Services — Appec TSS</title>
     <!-- css link main -->
     <link rel="stylesheet" href="../Css/style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="../Css/responsive.css">
+    <!-- service page css -->
+    <link rel="stylesheet" href="../Css/service.css">
     <!-- website icon -->
     <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
 </head>
 
-<body>
+<body id="body">
+
+    <!-- offline warning (reused from main) -->
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline. Some features may not work.</div>
+        </div>
+        <span class="status_dot"></span>
+    </div>
+
     <header>
-        <nav class="navbar">
+        <div class="overlay" id="overlay"></div>
+        <nav class="navbar" id="navbar">
+            
             <img src="../Images/Logo/logo.png" alt="Website Appec Logo">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../Pages/About.html">About Us</a></li>
-                <li><a href="../Pages/Service.html">Service</a></li>
+                <li><a href="../Pages/Service.html" class="active_nav">Service</a></li>
                 <li><a href="../Pages/Contact.html">Contact</a></li>
                 <li><a href="../Pages/student_portal.html">Student Portal</a></li>
             </ul>
+            <div class="menu">≡</div>
         </nav>
     </header>
 
+    <!-- ── PAGE HERO ── -->
+    <section class="service_hero">
+        <div class="service_hero_overlay"></div>
+        <div class="service_hero_content">
+            <h1>Our Services</h1>
+            <p>Discover the trades and programmes offered at College Appec TSS Remera-Rukoma</p>
+        </div>
+    </section>
 
+    <!-- ── INTRO ── -->
+    <section class="service_intro">
+        <h2>What We Offer</h2>
+        <p>
+            College Appec TSS Remera-Rukoma provides hands-on, industry-aligned technical and vocational education
+            across four specialised trades. Our programmes are accredited by <strong>NESA</strong> and aligned with
+            Rwanda's national skills development agenda, equipping students with practical competencies for the
+            modern workforce.
+        </p>
+    </section>
 
+    <!-- ── SERVICE CARDS GRID ── -->
+    <section class="service_page_cards">
+        <div class="cards">
 
+            <!-- SWD -->
+            <div class="card software">
+                <img src="../Images/Web_images/swd.png" alt="Software Development">
+                <div class="card_overlay">
+                    <abbr title="Software Development"><h2>SWD</h2></abbr>
+                    <p>Software Development</p>
+                    <a href="#swd" class="more_info_btn">More Information</a>
+                </div>
+            </div>
 
+            <!-- BDC -->
+            <div class="card bulding">
+                <img src="../Images/Web_images/bdc.png" alt="Building and Construction">
+                <div class="card_overlay">
+                    <abbr title="Building &amp; Construction"><h2>BDC</h2></abbr>
+                    <p>Building &amp; Construction</p>
+                    <a href="#bdc" class="more_info_btn">More Information</a>
+                </div>
+            </div>
+
+            <!-- CSA -->
+            <div class="card computer">
+                <img src="../Images/Web_images/csa.png" alt="Computer System & Architecture">
+                <div class="card_overlay">
+                    <abbr title="Computer System &amp; Architecture"><h2>CSA</h2></abbr>
+                    <p>Computer System &amp; Architecture</p>
+                    <a href="#csa" class="more_info_btn">More Information</a>
+                </div>
+            </div>
+
+            <!-- Accounting -->
+            <div class="card accounting">
+                <img src="../Images/Web_images/acc.png" alt="Accounting">
+                <div class="card_overlay">
+                    <abbr title="Accounting"><h2>Accounting</h2></abbr>
+                    <p>Accounting &amp; Finance</p>
+                    <a href="#accounting" class="more_info_btn">More Information</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         DETAILED SECTIONS
+    ══════════════════════════════════════════════════════ -->
+
+    <!-- SWD -->
+    <section class="trade_detail" id="swd">
+        <div class="trade_image">
+            <img src="../Images/Web_images/swd.png" alt="Software Development">
+        </div>
+        <div class="trade_info">
+            <span class="trade_badge swd_badge">SWD</span>
+            <h2>Software Development</h2>
+            <p>
+                The Software Development programme trains students in modern programming languages, web technologies,
+                database management, and software engineering principles. Graduates are equipped to design, build,
+                and maintain software solutions for businesses and organisations.
+            </p>
+            <h3>Key Subjects</h3>
+            <ul>
+                <li>Web Design &amp; Development (HTML, CSS, JavaScript)</li>
+                <li>Programming Fundamentals (Python, Java)</li>
+                <li>Database Management (MySQL, PostgreSQL)</li>
+                <li>Software Engineering &amp; Project Management</li>
+                <li>Mobile Application Development</li>
+                <li>Networking Basics &amp; Cybersecurity Awareness</li>
+            </ul>
+            <h3>Career Opportunities</h3>
+            <ul>
+                <li>Web Developer / Front-end Developer</li>
+                <li>Software Engineer</li>
+                <li>Database Administrator</li>
+                <li>IT Support Specialist</li>
+                <li>Freelance Developer / Entrepreneur</li>
+            </ul>
+            <a href="../Pages/Contact.html" class="trade_apply_btn">Apply Now →</a>
+        </div>
+    </section>
+
+    <!-- BDC -->
+    <section class="trade_detail trade_detail_reverse" id="bdc">
+        <div class="trade_image">
+            <img src="../Images/Web_images/bdc.png" alt="Building and Construction">
+        </div>
+        <div class="trade_info">
+            <span class="trade_badge bdc_badge">BDC</span>
+            <h2>Building &amp; Construction</h2>
+            <p>
+                The Building &amp; Construction programme provides students with comprehensive knowledge of
+                construction techniques, architectural drawing, site management, and the use of modern building
+                materials. Students gain practical skills through on-site projects and workshops.
+            </p>
+            <h3>Key Subjects</h3>
+            <ul>
+                <li>Architectural Drawing &amp; Design</li>
+                <li>Masonry &amp; Bricklaying</li>
+                <li>Carpentry &amp; Joinery</li>
+                <li>Plumbing &amp; Sanitation</li>
+                <li>Electrical Installation Basics</li>
+                <li>Construction Site Management &amp; Safety</li>
+            </ul>
+            <h3>Career Opportunities</h3>
+            <ul>
+                <li>Construction Technician</li>
+                <li>Site Supervisor</li>
+                <li>Architectural Draughtsman</li>
+                <li>Building Inspector</li>
+                <li>Contractor / Entrepreneur</li>
+            </ul>
+            <a href="../Pages/Contact.html" class="trade_apply_btn">Apply Now →</a>
+        </div>
+    </section>
+
+    <!-- CSA -->
+    <section class="trade_detail" id="csa">
+        <div class="trade_image">
+            <img src="../Images/Web_images/csa.png" alt="Computer System & Architecture">
+        </div>
+        <div class="trade_info">
+            <span class="trade_badge csa_badge">CSA</span>
+            <h2>Computer System &amp; Architecture</h2>
+            <p>
+                The Computer System &amp; Architecture programme focuses on hardware fundamentals, operating systems,
+                networking, and system administration. Students learn to assemble, configure, troubleshoot, and
+                maintain computer systems and networks.
+            </p>
+            <h3>Key Subjects</h3>
+            <ul>
+                <li>Computer Hardware &amp; Assembly</li>
+                <li>Operating Systems (Windows, Linux)</li>
+                <li>Computer Networking (LAN, WAN, TCP/IP)</li>
+                <li>System Administration &amp; Maintenance</li>
+                <li>Cybersecurity Fundamentals</li>
+                <li>Cloud Computing Basics</li>
+            </ul>
+            <h3>Career Opportunities</h3>
+            <ul>
+                <li>IT Technician / Hardware Engineer</li>
+                <li>Network Administrator</li>
+                <li>System Administrator</li>
+                <li>Cybersecurity Analyst</li>
+                <li>IT Consultant</li>
+            </ul>
+            <a href="../Pages/Contact.html" class="trade_apply_btn">Apply Now →</a>
+        </div>
+    </section>
+
+    <!-- Accounting -->
+    <section class="trade_detail trade_detail_reverse" id="accounting">
+        <div class="trade_image">
+            <img src="../Images/Web_images/acc.png" alt="Accounting">
+        </div>
+        <div class="trade_info">
+            <span class="trade_badge acc_badge">ACC</span>
+            <h2>Accounting &amp; Finance</h2>
+            <p>
+                The Accounting programme equips students with financial literacy, bookkeeping, taxation, and
+                business management skills. Students learn to manage financial records, prepare reports, and
+                support business decision-making using modern accounting tools.
+            </p>
+            <h3>Key Subjects</h3>
+            <ul>
+                <li>Financial Accounting &amp; Bookkeeping</li>
+                <li>Cost &amp; Management Accounting</li>
+                <li>Taxation &amp; Rwanda Revenue Authority (RRA) Compliance</li>
+                <li>Business Mathematics &amp; Statistics</li>
+                <li>Computerised Accounting (QuickBooks, Sage)</li>
+                <li>Entrepreneurship &amp; Business Management</li>
+            </ul>
+            <h3>Career Opportunities</h3>
+            <ul>
+                <li>Accountant / Bookkeeper</li>
+                <li>Finance Officer</li>
+                <li>Tax Consultant</li>
+                <li>Auditor</li>
+                <li>Business Owner / Entrepreneur</li>
+            </ul>
+            <a href="../Pages/Contact.html" class="trade_apply_btn">Apply Now →</a>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="footer">
+        <div class="social_media">
+            <h3>Social Media</h3>
+            <div class="line"></div>
+            <p><img src="../Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p>
+            <p><img src="../Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p>
+            <p><img src="../Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p>
+            <p><img src="../Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p>
+            <p><img src="../Images/icons/youtube-brands-solid-full.svg" alt="YouTube">YouTube</p>
+            <p><img src="../Images/icons/tiktok-brands-solid-full.svg" alt="Tiktok">Tiktok</p>
+            <p><img src="../Images/icons/envelope-solid-full.svg" alt="Email">Email</p>
+            <p><img src="../Images/icons/phone-solid-full.svg" alt="Tel">Telephone</p>
+        </div>
+        <div class="quick_links">
+            <h3>Quick Links</h3>
+            <div class="line"></div>
+            <a href="../index.html">Home</a>
+            <a href="../Pages/About.html">About Us</a>
+            <a href="../Pages/Service.html">Service</a>
+            <a href="../Pages/Contact.html">Contact Us</a>
+            <a href="../Pages/About.html">Admission</a>
+            <a href="../Pages/student_portal.html">Student Portal</a>
+        </div>
+        <div class="map">
+            <h3>Location</h3>
+            <div class="line"></div>
+            <div class="map_container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll"><button id="button_scroll">↑</button></a>
 
     <!-- menu bar javascript -->
-    <script src="./Javascript/menu_bar.js"></script>
+    <script src="../Javascript/menu_bar.js"></script>
     <!-- main js -->
-    <script src="./Javascript/index.js"></script>
+    <script src="../Javascript/index.js"></script>
+    <!-- offline javascript -->
+    <script src="../Javascript/offline.js"></script>
+    <!-- hide box js -->
+    <script src="../Javascript/hide_box.js"></script>
 
 </body>
 

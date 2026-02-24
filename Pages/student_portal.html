@@ -1,48 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appec Website</title>
-    <!-- css link main -->
-     <link rel="stylesheet" href="../Css/style.css">
-     <!-- responsive css -->
-      <link rel="stylesheet" href="../Css/responsive.css">
-      <!-- website icon -->
-       <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
+    <title>Student Portal — Appec TSS</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
+    <link rel="stylesheet" href="../Css/service.css">
+    <link rel="stylesheet" href="../Css/portal.css">
+    <link rel="shortcut icon" href="../Images/Logo/logo.png" type="image/x-icon">
 </head>
-<body>
-   <header>
-     <nav class="navbar">
+
+<body id="body">
+
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline.</div>
+        </div>
+        <span class="status_dot"></span>
+    </div>
+
+    <nav class="navbar" id="navbar">
         <img src="../Images/Logo/logo.png" alt="Website Appec Logo">
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/About.html">About Us</a></li>
             <li><a href="../Pages/Service.html">Service</a></li>
             <li><a href="../Pages/Contact.html">Contact</a></li>
-            <li><a href="../Pages/student_portal.html">Student Portal</a></li>
+            <li><a href="../Pages/student_portal.html" class="active_nav">Student Portal</a></li>
         </ul>
+        <div class="menu">≡</div>
     </nav>
-    <div class="header">
-        <h1>Admission To College Appec Or Check Admission Request</h1>
 
-        <div class="choice">
-            <input type="button" value="Check Admission Request">
-            <input type="button" value="Register To College Appec">
-            
+    <!-- ── HERO ── -->
+    <section class="portal_hero">
+        <div class="portal_hero_overlay"></div>
+        <div class="portal_hero_content">
+            <h1>Student Portal</h1>
+            <p>Apply for admission or check your application status</p>
+            <div class="portal_hero_btns">
+                <a href="#apply" class="portal_hero_btn primary">Apply Now</a>
+                <a href="#check" class="portal_hero_btn secondary">Check Status</a>
+                <a href="teacher_login.html" class="portal_hero_btn outline">Teacher Login</a>
+                <a href="master_login.html" class="portal_hero_btn outline">Master Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PORTAL TABS ── -->
+    <section class="portal_tabs_section">
+        <div class="portal_tabs">
+            <button class="portal_tab active" data-tab="apply">📝 Apply for Admission</button>
+            <button class="portal_tab" data-tab="check">🔍 Check Application</button>
+        </div>
+
+        <!-- ── APPLICATION FORM ── -->
+        <div class="portal_panel active" id="tab_apply">
+            <div class="portal_panel_inner" id="apply">
+                <div class="portal_form_header animate-on-scroll animate-slide-up">
+                    <span class="portal_tag">New Application</span>
+                    <h2>Apply to College Appec TSS</h2>
+                    <p>Complete the form below to submit your application. All fields marked * are required.</p>
+                </div>
+
+                <form class="portal_form" id="applyForm" onsubmit="submitApplication(event)">
+
+                    <!-- Personal Info -->
+                    <div class="portal_form_section animate-on-scroll animate-slide-up animate-delay-1">
+                        <h3>👤 Personal Information</h3>
+                        <div class="pf_grid">
+                            <div class="pf_group">
+                                <label>First Name *</label>
+                                <input type="text" id="pf_fname" placeholder="First name" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Last Name *</label>
+                                <input type="text" id="pf_lname" placeholder="Last name" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Date of Birth *</label>
+                                <input type="date" id="pf_dob" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Gender *</label>
+                                <select id="pf_gender" required>
+                                    <option value="" disabled selected>Select gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                            <div class="pf_group">
+                                <label>National ID / Birth Certificate No. *</label>
+                                <input type="text" id="pf_id" placeholder="ID number" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Nationality *</label>
+                                <input type="text" id="pf_nationality" placeholder="e.g. Rwandan" value="Rwandan" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="portal_form_section animate-on-scroll animate-slide-up animate-delay-2">
+                        <h3>📞 Contact Information</h3>
+                        <div class="pf_grid">
+                            <div class="pf_group">
+                                <label>Phone Number *</label>
+                                <input type="tel" id="pf_phone" placeholder="+250 7XX XXX XXX" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Email Address</label>
+                                <input type="email" id="pf_email" placeholder="your@email.com">
+                            </div>
+                            <div class="pf_group">
+                                <label>Province *</label>
+                                <select id="pf_province" required>
+                                    <option value="" disabled selected>Select province</option>
+                                    <option>Kigali City</option>
+                                    <option>Southern Province</option>
+                                    <option>Northern Province</option>
+                                    <option>Eastern Province</option>
+                                    <option>Western Province</option>
+                                </select>
+                            </div>
+                            <div class="pf_group">
+                                <label>District *</label>
+                                <input type="text" id="pf_district" placeholder="Your district" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Info -->
+                    <div class="portal_form_section animate-on-scroll animate-slide-up animate-delay-3">
+                        <h3>🎓 Academic Information</h3>
+                        <div class="pf_grid">
+                            <div class="pf_group">
+                                <label>Previous School *</label>
+                                <input type="text" id="pf_school" placeholder="Name of previous school" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Year of Completion *</label>
+                                <input type="number" id="pf_year" placeholder="e.g. 2024" min="2010" max="2030" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Preferred Trade *</label>
+                                <select id="pf_trade" required>
+                                    <option value="" disabled selected>Select trade</option>
+                                    <option value="SWD">Software Development (SWD)</option>
+                                    <option value="BDC">Building & Construction (BDC)</option>
+                                    <option value="CSA">Computer System & Architecture (CSA)</option>
+                                    <option value="ACC">Accounting</option>
+                                </select>
+                            </div>
+                            <div class="pf_group">
+                                <label>Academic Level *</label>
+                                <select id="pf_level" required>
+                                    <option value="" disabled selected>Select level</option>
+                                    <option>Senior 1 (S1)</option>
+                                    <option>Senior 2 (S2)</option>
+                                    <option>Senior 3 (S3)</option>
+                                    <option>Senior 4 (S4)</option>
+                                    <option>Senior 5 (S5)</option>
+                                    <option>Senior 6 (S6)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parent/Guardian -->
+                    <div class="portal_form_section animate-on-scroll animate-slide-up animate-delay-4">
+                        <h3>👨‍👩‍👧 Parent / Guardian Information</h3>
+                        <div class="pf_grid">
+                            <div class="pf_group">
+                                <label>Guardian Full Name *</label>
+                                <input type="text" id="pf_guardian" placeholder="Guardian's full name" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Relationship *</label>
+                                <select id="pf_relation" required>
+                                    <option value="" disabled selected>Select relationship</option>
+                                    <option>Father</option>
+                                    <option>Mother</option>
+                                    <option>Uncle / Aunt</option>
+                                    <option>Sibling</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="pf_group">
+                                <label>Guardian Phone *</label>
+                                <input type="tel" id="pf_gphone" placeholder="+250 7XX XXX XXX" required>
+                            </div>
+                            <div class="pf_group">
+                                <label>Guardian Email</label>
+                                <input type="email" id="pf_gemail" placeholder="guardian@email.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="portal_submit_btn">
+                        <span class="btn_text">Submit Application</span>
+                        <span class="btn_icon">🚀</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ── CHECK STATUS ── -->
+        <div class="portal_panel" id="tab_check">
+            <div class="portal_panel_inner" id="check">
+                <div class="portal_form_header animate-on-scroll animate-slide-up">
+                    <span class="portal_tag">Check Status</span>
+                    <h2>Check Your Application</h2>
+                    <p>Enter your Application Reference Number or National ID to check your admission status.</p>
+                </div>
+                <form class="portal_form check_form" onsubmit="checkStatus(event)">
+                    <div class="pf_group">
+                        <label>Application Reference / National ID *</label>
+                        <input type="text" id="check_ref" placeholder="e.g. APP-2025-0001 or your ID number" required>
+                    </div>
+                    <div class="pf_group">
+                        <label>Date of Birth *</label>
+                        <input type="date" id="check_dob" required>
+                    </div>
+                    <button type="submit" class="portal_submit_btn">
+                        <span class="btn_text">Check Status</span>
+                        <span class="btn_icon">🔍</span>
+                    </button>
+                </form>
+                <div class="check_result" id="checkResult"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONFIRMATION CARD (slides in from above) ── -->
+    <div class="confirm_overlay" id="confirmOverlay">
+        <div class="confirm_card" id="confirmCard">
+            <div class="confirm_icon">🎓</div>
+            <h2>Application Submitted!</h2>
+            <div class="confirm_ref" id="confirmRef">APP-2025-0001</div>
+            <div class="confirm_student" id="confirmStudent">Dear Student,</div>
+            <p class="confirm_msg">
+                Your application to <strong>College Appec TSS Remera-Rukoma</strong> has been received successfully.
+                Our admissions team will review your information and respond to you within
+                <strong>7 business days</strong>. Please wait patiently.
+            </p>
+            <div class="confirm_details" id="confirmDetails"></div>
+            <div class="confirm_note">
+                📌 Save your reference number above. You will need it to check your application status.
+            </div>
+            <button class="confirm_close_btn" onclick="closeConfirm()">Close ✕</button>
         </div>
     </div>
-   </header>
 
-    
+    <!-- ── FOOTER ── -->
+    <div class="footer">
+        <div class="social_media">
+            <h3>Social Media</h3>
+            <div class="line"></div>
+            <p><img src="../Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p>
+            <p><img src="../Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p>
+            <p><img src="../Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p>
+            <p><img src="../Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p>
+            <p><img src="../Images/icons/youtube-brands-solid-full.svg" alt="YouTube">YouTube</p>
+            <p><img src="../Images/icons/tiktok-brands-solid-full.svg" alt="Tiktok">Tiktok</p>
+            <p><img src="../Images/icons/envelope-solid-full.svg" alt="Email">Email</p>
+            <p><img src="../Images/icons/phone-solid-full.svg" alt="Tel">Telephone</p>
+        </div>
+        <div class="quick_links">
+            <h3>Quick Links</h3>
+            <div class="line"></div>
+            <a href="../index.html">Home</a>
+            <a href="../Pages/About.html">About Us</a>
+            <a href="../Pages/Service.html">Service</a>
+            <a href="../Pages/Contact.html">Contact Us</a>
+            <a href="../Pages/student_portal.html">Student Portal</a>
+        </div>
+        <div class="map">
+            <h3>Location</h3>
+            <div class="line"></div>
+            <div class="map_container">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
 
+    <a href="#" id="scroll"><button id="button_scroll">↑</button></a>
 
+    <script src="../Javascript/menu_bar.js"></script>
+    <script src="../Javascript/index.js"></script>
+    <script src="../Javascript/offline.js"></script>
+    <script src="../Javascript/hide_box.js"></script>
+    <script>
+        // === TAB SWITCHING ===
+        var tabs = document.querySelectorAll('.portal_tab');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                // Remove active from all tabs and panels
+                tabs.forEach(function(t) { t.classList.remove('active'); });
+                document.querySelectorAll('.portal_panel').forEach(function(p) { p.classList.remove('active'); });
+                
+                // Activate clicked tab and corresponding panel
+                tab.classList.add('active');
+                document.getElementById('tab_' + tab.dataset.tab).classList.add('active');
+            });
+        });
 
+        // === SUBMIT APPLICATION ===
+        function submitApplication(e) {
+            e.preventDefault();
+            var btn = document.querySelector('#applyForm .portal_submit_btn');
+            btn.disabled = true;
+            btn.querySelector('.btn_text').textContent = 'Submitting…';
 
-    <!-- menu bar javascript -->
-     <script src="./Javascript/menu_bar.js"></script>
-     <!-- main js -->
-      <script src="./Javascript/index.js"></script>
-    
+            var fname = document.getElementById('pf_fname').value;
+            var lname = document.getElementById('pf_lname').value;
+            var trade = document.getElementById('pf_trade').value;
+            var level = document.getElementById('pf_level').value;
+            var phone = document.getElementById('pf_phone').value;
+            var ref = 'APP-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 9000 + 1000);
+
+            setTimeout(function() {
+                document.getElementById('confirmRef').textContent = ref;
+                document.getElementById('confirmStudent').textContent = 'Dear ' + fname + ' ' + lname + ',';
+                document.getElementById('confirmDetails').innerHTML =
+                    '<div class="cd_row"><span>Trade Applied</span><strong>' + trade + '</strong></div>' +
+                    '<div class="cd_row"><span>Level</span><strong>' + level + '</strong></div>' +
+                    '<div class="cd_row"><span>Phone</span><strong>' + phone + '</strong></div>' +
+                    '<div class="cd_row"><span>Status</span><strong class="status_pending">Pending Review</strong></div>';
+                document.getElementById('confirmOverlay').classList.add('show');
+                document.getElementById('confirmCard').classList.add('slide_in');
+            }, 1400);
+        }
+
+        // === CLOSE CONFIRMATION ===
+        function closeConfirm() {
+            var card = document.getElementById('confirmCard');
+            card.classList.add('slide_out');
+            setTimeout(function() {
+                document.getElementById('confirmOverlay').classList.remove('show');
+                card.classList.remove('slide_in', 'slide_out');
+            }, 500);
+        }
+
+        // === CHECK APPLICATION STATUS ===
+        function checkStatus(e) {
+            e.preventDefault();
+            var ref = document.getElementById('check_ref').value;
+            var result = document.getElementById('checkResult');
+            result.innerHTML = '';
+            result.classList.remove('show');
+
+            setTimeout(function() {
+                result.innerHTML = '<div class="check_card"><div class="check_status_icon">⏳</div>' +
+                    '<h3>Application Found</h3><p>Reference: <strong>' + ref + '</strong></p>' +
+                    '<p>Status: <span class="status_pending">Pending Review</span></p></div>';
+                result.classList.add('show');
+            }, 900);
+        }
+
+        // === SCROLL ANIMATIONS ===
+        window.addEventListener('load', function() {
+            // Animate hero content
+            var heroContent = document.querySelector('.portal_hero_content');
+            if (heroContent) {
+                heroContent.style.opacity = '0';
+                setTimeout(function() {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transition = 'opacity 0.8s ease';
+                }, 100);
+            }
+
+            // Animate tabs
+            var tabsSection = document.querySelector('.portal_tabs_section');
+            if (tabsSection) {
+                tabsSection.style.opacity = '0';
+                setTimeout(function() {
+                    tabsSection.style.opacity = '1';
+                    tabsSection.style.transition = 'opacity 0.6s ease 0.3s';
+                }, 300);
+            }
+
+            // Scroll animations for form sections
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
+
 </html>

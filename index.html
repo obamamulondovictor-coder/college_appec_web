@@ -16,26 +16,48 @@
 <body id="body">
 
     <!-- offline warning -->
-    <div id="offlineWarning" style="
-  display:none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: black;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  z-index: 9999;
-">
-
+    <div id="offlineWarning" class="offlineWarning">
+        <span class="warn_icon" id="warnIcon">📡</span>
+        <div class="warn_content">
+            <div class="warn_title" id="warnTitle">No Connection</div>
+            <div class="warn_msg" id="warnMsg">You are currently offline. Some features may not work.</div>
+        </div>
+        <span class="status_dot"></span>
     </div>
 
 
 
     <div class="hero" id="hero">
+        <!-- Slider images -->
+        <div class="hero_slider" id="heroSlider">
+            <div class="hero_slide active" style="background-image:url('./Images/Web_images/College_appec.png')">
+                <div class="slide_caption">
+                    <h2>College Appec TSS</h2>
+                    <p>Excellence in Technical Secondary Education</p>
+                </div>
+            </div>
+            <div class="hero_slide" style="background-image:url('./Images/Web_images/Appec Student.png')">
+                <div class="slide_caption">
+                    <h2>Student Life</h2>
+                    <p>Nurturing bright minds for tomorrow</p>
+                </div>
+            </div>
+            <div class="hero_slide" style="background-image:url('./Images/Web_images/Appec Primary.png')">
+                <div class="slide_caption">
+                    <h2>Primary Section</h2>
+                    <p>Building foundations for lifelong learning</p>
+                </div>
+            </div>
+            <div class="hero_slide" style="background-image:url('./Images/Web_images/Master Image.png')">
+                <div class="slide_caption">
+                    <h2>Quality Education</h2>
+                    <p>Empowering future leaders of Rwanda</p>
+                </div>
+            </div>
+        </div>
         <div class="overlay" id="overlay"></div>
         <header>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar dont_show" id="navbar">
                 <img src="./Images/Logo/logo.png" alt="Website Appec Logo">
                 <ul>
                     <li><a href="./index.html">Home</a> </li>
@@ -46,24 +68,35 @@
                 </ul>
                 <div class="menu">≡</div>
             </nav>
-            <div class="welcome">
+            <div class="welcome animate-slide-up">
                 <h1>Welcome To</h1>
                 <p>College Appec TSS Remera-Rukoma</p>
             </div>
-
+        </header>
+        <!-- Slider dots -->
+        <div class="hero_dots" id="heroDots">
+            <span class="hero_dot active" data-index="0"></span>
+            <span class="hero_dot" data-index="1"></span>
+            <span class="hero_dot" data-index="2"></span>
+            <span class="hero_dot" data-index="3"></span>
+        </div>
     </div>
-    <div id="card_message" class="card_message" style="display: none;">
+    <div id="card_message" class="card_message" style="display:none;">
+        <div class="card_header">
+            <span class="cookie_icon">🍪</span>
+            <h3>Cookie Preferences</h3>
+        </div>
         <p>
-            Want to Always Get Latest Update On College Appec Website.
-            For More Information About This, Click Here:
+            We use cookies to keep you updated with the latest news from College Appec.
+            Your preference will be remembered for 30 days.
             <a href="https://dev.to/olami_tech/understanding-cookies-what-they-are-how-they-work-and-why-they-matter-for-your-privacy-3fo2"
                 target="_blank" rel="noopener noreferrer">
-                Visit To Understand →
+                Learn more →
             </a>
         </p>
         <div class="buttons">
-            <button id="agreeBtn">Agree</button>
-            <button id="ignoreBtn">Ignore</button>
+            <button id="agreeBtn">✓ Accept</button>
+            <button id="ignoreBtn">Dismiss</button>
         </div>
     </div>
 
@@ -97,29 +130,45 @@
             </div>
         </div>
         <div class="cards">
-            <div class="software">
-                <img src="./Images/Web_images/" alt="Software Dev Image">
-                <abbr title="Software Develpment">
-                    <h1>SWD</h1>
-                </abbr>
+            <div class="card software">
+                <img src="./Images/Web_images/swd.png" alt="Software Dev Image">
+                <div class="card_overlay">
+                    <abbr title="Software Development">
+                        <h2>SWD</h2>
+                    </abbr>
+                    <p>Software Development</p>
+                    <a href="./Pages/Service.html#swd" class="more_info_btn">More Information</a>
+                </div>
             </div>
-            <div class="bulding">
-                <img src="./Images/Web_images/" alt="Building and construction image">
-                <abbr title="Building & Construction">
-                    <h1>BDC</h1>
-                </abbr>
+            <div class="card bulding">
+                <img src="./Images/Web_images/bdc.png" alt="Building and construction image">
+                <div class="card_overlay">
+                    <abbr title="Building & Construction">
+                        <h2>BDC</h2>
+                    </abbr>
+                    <p>Building & Construction</p>
+                    <a href="./Pages/Service.html#bdc" class="more_info_btn">More Information</a>
+                </div>
             </div>
-            <div class="computer">
-                <img src="./Images/Web_images/" alt="Computer system image">
-                <abbr title="Computer System & Architecture">
-                    <h1>CSA</h1>
-                </abbr>
+            <div class="card computer">
+                <img src="./Images/Web_images/csa.png" alt="Computer system image">
+                <div class="card_overlay">
+                    <abbr title="Computer System & Architecture">
+                        <h2>CSA</h2>
+                    </abbr>
+                    <p>Computer System & Architecture</p>
+                    <a href="./Pages/Service.html#csa" class="more_info_btn">More Information</a>
+                </div>
             </div>
-            <div class="accounting">
-                <img src="./Images/Web_images/" alt="Accounting image">
-                <abbr title="Accounting">
-                    <h1>Accounting</h1>
-                </abbr>
+            <div class="card accounting">
+                <img src="./Images/Web_images/acc.png" alt="Accounting image">
+                <div class="card_overlay">
+                    <abbr title="Accounting">
+                        <h2>Accounting</h2>
+                    </abbr>
+                    <p>Accounting & Finance</p>
+                    <a href="./Pages/Service.html#accounting" class="more_info_btn">More Information</a>
+                </div>
             </div>
         </div>
     </div>
@@ -157,10 +206,10 @@
         <div class="social_media">
             <h3>Social Media</h3>
             <div class="line"></div>
-            <p><img src="./Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p>
-            <p><img src="./Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p>
-            <p><img src="./Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p>
-            <p><img src="./Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p>
+            <a href="https://facebook.com/" target="_blank"><p><img src="./Images/icons/facebook-brands-solid-full.svg" alt="Facebook">Facebook</p></a>
+            <a href="http://instagram.com/" target="_blank" rel="noopener noreferrer"><p><img src="./Images/icons/instagram-brands-solid-full.svg" alt="Instagram">Instagram</p></a>
+            <a href="http://twitter.com/" target="_blank" rel="noopener noreferrer"><p><img src="./Images/icons/x-twitter-brands-solid-full.svg" alt="X-twitter">X-twitter</p></a>
+            <a href="http://instagram.com/" target="_blank" rel="noopener noreferrer"><p><img src="./Images/icons/whatsapp-brands-solid-full.svg" alt="Whatsapp">Whatsapp</p></a>
             <p><img src="./Images/icons/youtube-brands-solid-full.svg" alt="YouTube">YouTube</p>
             <p><img src="./Images/icons/tiktok-brands-solid-full.svg" alt="Tiktok">Tiktok</p>
             <p><img src="./Images/icons/envelope-solid-full.svg" alt="Email">Email</p>
@@ -181,7 +230,7 @@
             <h3>Location</h3>
             <div class="line"></div>
             <div class="map_container">
-                <iframe src="https://maps.app.goo.gl/yEmMHPSbm44XkUJZA" frameborder="0"></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.515150115828!2d29.900403773849984!3d-1.9469059980354333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbbc05eef8543%3A0xa5be15c3fc175083!2sCollege%20APPEC%20remera%20rukoma!5e0!3m2!1sen!2srw!4v1771907225806!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
